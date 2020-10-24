@@ -36,3 +36,18 @@
  DESCRIBE employee_payroll;
 ```
 
+## UC3-Create Employee Payroll data in the Payroll Service database
+
+```
+INSERT INTO employee_payroll(name , salary , start) VALUES
+    -> ('Bill' , 100000.00 , '2018-01-03' ),
+    -> ('Mark' , 200000.00 , '2019-11-13' ),
+    -> ('Charlie',300000.00, '2020-05-21' );
+```
+### see the data using database query
+
+```
+SELECT * FROM employee_payroll;
+```
+
+
