@@ -18,21 +18,5 @@
  use payroll_service;
 ```
 
-## UC2-Create EmployeePayroll_Table
 
-```
- CREATE TABLE employee_payroll
- -> (
-    -> id            INT unsigned NOT NULL AUTO_INCREMENT,
-    -> name          VARCHAR(150) NOT NULL,
-    -> salary        Double NOT NULL,
-    -> start         DATE NOT NULL,
-    -> PRIMARY KEY   (id)
-    -> );
-```
-###To see the table
-
-```
- DESCRIBE employee_payroll;
-```
 
