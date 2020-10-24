@@ -62,13 +62,31 @@ SELECT * FROM employee_payroll;
 ```
  SELECT salary FROM employee_payroll WHERE name ='Bill';
 ```
-###show employee payroll Between 2018 to now using db query
+### show employee payroll Between 2018 to now using db query
 ```
  SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
 ```
 
-###show employee payroll Between 2019 to now using db query
+### show employee payroll Between 2019 to now using db query
 ```
  SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2019-01-01' AS DATE) AND DATE(NOW());
 ```
 
+## UC6-Ability to add Gender to EmployeePayroll Table and Update the Rows to Employee Gender
+
+```
+ ALTER TABLE employee_payroll ADD gender CHAR(1) AFTER name;
+```
+
+```
+update employee_payroll set gender ='F' where name ='Terisa';
+```
+
+```
+update employee_payroll set gender ='M' where name ='Bill' or name ='Charlie' or name ='Mark';
+```
+
+### see updated gender using db query
+```
+SELECT * FROM employee_payroll;
+```
