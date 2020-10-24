@@ -90,3 +90,35 @@ update employee_payroll set gender ='M' where name ='Bill' or name ='Charlie' or
 ```
 SELECT * FROM employee_payroll;
 ```
+## UC7-Ability to find sum, average, min, max and number of male and female employees
+
+### To find sum using db query
+
+```
+SELECT gender, SUM(salary) FROM employee_payroll GROUP BY gender;
+```
+### To find average using db query
+
+```
+SELECT gender, AVG(salary) FROM employee_payroll GROUP BY gender;
+```
+### To find minimum using db query
+
+```
+SELECT gender, MIN(salary) FROM employee_payroll GROUP BY gender;
+```
+### To find maximum using db query
+
+```
+mysql> SELECT gender, MAX(salary) FROM employee_payroll GROUP BY gender;
+```
+### To find count using db query
+
+```
+mysql> SELECT gender, COUNT(salary) FROM employee_payroll GROUP BY gender;
+```
+### To find countusing db query
+
+```
+mysql> SELECT gender, COUNT(name) FROM employee_payroll GROUP BY gender;
+```
