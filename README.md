@@ -50,4 +50,9 @@ INSERT INTO employee_payroll(name , salary , start) VALUES
 SELECT * FROM employee_payroll;
 ```
 
+## UC4-To retrieve all EmployeePayroll data added to Payroll Service
+
+```
+SELECT * FROM employee_payroll;
+```
 
