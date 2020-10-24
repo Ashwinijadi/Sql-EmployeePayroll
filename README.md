@@ -56,3 +56,19 @@ SELECT * FROM employee_payroll;
 SELECT * FROM employee_payroll;
 ```
 
+## UC5-Ability to retrieve salary data for a particular employee 
+##All employees who have joined in a particular data range from the payroll service database
+
+```
+ SELECT salary FROM employee_payroll WHERE name ='Bill';
+```
+###show employee payroll Between 2018 to now using db query
+```
+ SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
+```
+
+###show employee payroll Between 2019 to now using db query
+```
+ SELECT * FROM employee_payroll WHERE start BETWEEN CAST('2019-01-01' AS DATE) AND DATE(NOW());
+```
+
