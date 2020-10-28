@@ -30,7 +30,7 @@
     -> PRIMARY KEY   (id)
     -> );
 ```
-###see the table using database query
+### see the table using database query
 
 ```
  DESCRIBE employee_payroll;
@@ -171,4 +171,25 @@ alter table employee_payroll add tax double NOT NULL after taxable_pay;
 
 ```
 alter table employee_payroll add net_pay double NOT NULL after tax;
+```
+## UC-10.1 To make Terisa as part of Sales and Marketing Department
+
+### To insert Terisa into sales department using database query
+
+```
+INSERT INTO employee_payroll(name ,phoneNumber,address,department,gender,basic_Pay,deductions,taxable_pay,tax,net_pay,start) VALUES
+    -> ('Terisa','7894561230','Hyd','Sales','F',300000.0,0,300000,100000,200000,'2019-11-13');
+```
+
+### To insert Terisa into Marketing department using database query
+
+```
+INSERT INTO employee_payroll(name ,phoneNumber,address,department,gender,basic_Pay,deductions,taxable_pay,tax,net_pay,start) VALUES
+    -> ('Terisa','7894561230','Hyd','Marketing','F',200000.0,0,200000,0,200000,'2019-11-13');
+```
+
+### To show table having name as terisa
+
+```
+select * from employee_payroll where name='Terisa';
 ```
