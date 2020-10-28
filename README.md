@@ -143,3 +143,32 @@ alter table employee_payroll add address varchar(300) after phoneNumber;
 ```
 alter table employee_payroll add department varchar(250) NOT NULL after address;
 ```
+
+## UC9 - Add  Employee Basic Pay, Deductions , Taxable Pay ,Income Tax ,Net Pay to the table
+
+### To add Employee Employee Basic Pay using database query
+
+```
+alter table employee_payroll add basic_Pay double NOT NULL after gender;
+```
+### To add Employee Employee Deductions using database query
+
+```
+alter table employee_payroll add deductions double NOT NULL after basic_Pay;
+```
+### To add Employee Employee Taxable Pay using database query
+
+```
+alter table employee_payroll add taxable_pay double NOT NULL after deductions;
+```
+### To add Employee Employee Income Tax using database query
+
+```
+alter table employee_payroll add tax double NOT NULL after taxable_pay;
+```
+
+### To add Employee Employee Net Pay using database query
+
+```
+alter table employee_payroll add net_pay double NOT NULL after tax;
+```
