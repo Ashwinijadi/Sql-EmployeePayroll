@@ -117,8 +117,29 @@ mysql> SELECT gender, MAX(salary) FROM employee_payroll GROUP BY gender;
 ```
 mysql> SELECT gender, COUNT(salary) FROM employee_payroll GROUP BY gender;
 ```
-### To find countusing db query
+### To find count using db query
 
 ```
 mysql> SELECT gender, COUNT(name) FROM employee_payroll GROUP BY gender;
+```
+
+## UC8 - Add  Employee phoneNumber,address and Department to the table
+
+### To add Employee PhoneNumber using database query
+
+```
+alter table employee_payroll add phoneNumber varchar(250) after name;
+
+```
+
+### To add Employee address using database query
+
+```
+alter table employee_payroll add address varchar(300) after phoneNumber;
+```
+
+### To add Employee department using database query
+
+```
+alter table employee_payroll add department varchar(250) NOT NULL after address;
 ```
