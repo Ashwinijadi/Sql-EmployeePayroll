@@ -209,6 +209,7 @@ CREATE TABLE employee
 -> start         date NOT NULL,
 -> company_id     INT ,
 -> FOREIGN KEY (company_id) REFERENCES company (company_id)
+-> );
 ```
 ### To create payroll table using db query
 
@@ -222,7 +223,7 @@ CREATE TABLE payroll
 -> tax          DOUBLE NOT NULL,
 -> net_pay      DOUBLE NOT NULL,
 -> FOREIGN KEY (id) REFERENCES employee (id),
--> )
+-> );
 ```
 ### To create department table using db query
 
@@ -230,7 +231,7 @@ CREATE TABLE payroll
 CREATE TABLE department(
 -> Dept_ int NOT NULL PRIMARY KEY,
 -> Dept_Name varchar(150) NOT NULL
--> )
+-> );
 ```
 ### To create employee_department table using db query
 
@@ -240,6 +241,49 @@ create table employee_department(
 -> Dept_id int NOT NULL,
 -> FOREIGN KEY (id) REFERENCES employee (id),
 -> FOREIGN KEY (Dept_id) REFERENCES department (Dept_id)
--> )
+-> );
 ```
+
+## UC-12 To find maximum,mnimum,sum,average,count
+
+### To view payroll table
+```
+select * from payroll;
+```
+### To view employee table
+
+```
+select * from employee;
+```
+
+### To find count of employees using db query
+
+```
+SELECT gender,count(name) FROM employee group by gender;
+```
+
+### To find maximum using db query
+
+```
+SELECT MAX(net_pay) FROM payroll;
+
+```
+### To find minimum using db query
+
+```
+SELECT MIN(net_pay) FROM payroll;
+```
+
+### To find sum using db query
+
+```
+SELECT SUM(net_pay) FROM payroll group by gender;
+```
+
+### To find average using db query
+
+```
+SELECT gender,AVG(net_pay) FROM payroll group by gender;
+```
+
 
