@@ -57,7 +57,7 @@ SELECT * FROM employee_payroll;
 ```
 
 ## UC5-Ability to retrieve salary data for a particular employee 
-##All employees who have joined in a particular data range from the payroll service database
+## All employees who have joined in a particular data range from the payroll service database
 
 ```
  SELECT salary FROM employee_payroll WHERE name ='Bill';
@@ -193,3 +193,53 @@ INSERT INTO employee_payroll(name ,phoneNumber,address,department,gender,basic_P
 ```
 select * from employee_payroll where name='Terisa';
 ```
+
+## UC-11 create table Employee_department having Employee_Id and DEpartment_Id 
+
+### To create employee table using db query
+
+```
+CREATE TABLE employee
+-> (
+-> id   INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-> name            varchar(150) NOT NULL,
+-> phoneNumber    varchar(300),
+-> address         varchar(250),
+-> gender          char(1),
+-> start         date NOT NULL,
+-> company_id     INT ,
+-> FOREIGN KEY (company_id) REFERENCES company (company_id)
+```
+### To create payroll table using db query
+
+```
+CREATE TABLE payroll
+-> (
+-> id   INT unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+-> basic_pay    DOUBLE NOT NULL,
+-> deductions   DOUBLE NOT NULL,
+-> taxable_pay  DOUBLE NOT NULL,
+-> tax          DOUBLE NOT NULL,
+-> net_pay      DOUBLE NOT NULL,
+-> FOREIGN KEY (id) REFERENCES employee (id),
+-> )
+```
+### To create department table using db query
+
+```
+CREATE TABLE department(
+-> Dept_ int NOT NULL PRIMARY KEY,
+-> Dept_Name varchar(150) NOT NULL
+-> )
+```
+### To create employee_department table using db query
+
+```
+create table employee_department(
+-> id  INT unsigned NOT NULL AUTO_INCREMENT,
+-> Dept_id int NOT NULL,
+-> FOREIGN KEY (id) REFERENCES employee (id),
+-> FOREIGN KEY (Dept_id) REFERENCES department (Dept_id)
+-> )
+```
+
